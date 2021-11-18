@@ -16,7 +16,8 @@ puts 'creating flats...'
     address: Faker::Address.street_address,
     description: Faker::Lorem.paragraph,
     price_per_night: rand(150..500),
-    number_of_guests: rand(1..5)
+    number_of_guests: rand(1..5),
+    picture_url: "https://source.unsplash.com/featured/?houses"
   )
   puts "#{flat.id} is created."
 end
