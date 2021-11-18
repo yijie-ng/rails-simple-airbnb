@@ -2,13 +2,12 @@ class FlatsController < ApplicationController
   # index
   # GET /flats
   def index
-    # if params[:query]
-    #   @search = params[:query]
-    #   @flats = Flat.where("name LIKE '%#{params[:query]}%'")
-    # else
-    #   @flats = Flat.all
-    # end
-    @flats = Flat.all
+    if params[:query]
+      @search = params[:query]
+      @flats = Flat.where("name LIKE '%#{params[:query]}%'")
+    else
+      @flats = Flat.all
+    end
   end
 
   # new

@@ -13,34 +13,40 @@
     </div>
   </div>
 
-  <% @flats.each do |flat| %>
-    <div class="row">
-      <div class="col 4">
-        <div class="flat-card">
-          <div class="flat-card-image">
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-4">
+        <div class="card flat-card mb-4">
+          <div class="card-img-top flat-card-image">
           </div>
-          <div class="flat-card-content">
-            <div class="flat-card-title">
+
+          <div class="card-body flat-card-content border-bottom bg-light">
+            <div class="card-title flat-card-title">
               <h4><%= flat.name %></h4>
             </div>
-            <p><%= flat.address %></p>
-            <div class="flex">
-              <div class="flex">
-                <i class="material-icons mr-2">people</i><span><%= flat.number_of_guests %></span>
-              </div>
-              <div class="flex ml-3">
-                <i class="material-icons mr-2">euro_symbol</i> <%= flat.price_per_night %>
+            <div class="card-text">
+              <p><%= flat.address %></p>
+              <div class="d-flex justify-content-start">
+                <div class="d-flex justify-content-start">
+                  <i class="material-icons mr-2">people</i>
+                  <span><%= flat.number_of_guests %></span>
+                </div>
+
+                <div class="d-flex ml-3">
+                  <i class="material-icons mr-2">euro_symbol</i>
+                  <%= flat.price_per_night %>
+                </div>
               </div>
             </div>
           </div>
-          <div class="flat-card-actions">
+
+          <div class="card-body flat-card-actions">
             <%= link_to "More Info", flat_path(flat) %>
             <%= link_to "Edit", edit_flat_path(flat), class:"ml-3 text-warning" %>
             <%= link_to "Destroy", flat_path(flat), method: :delete, data: { confirm: "Are you sure?" }, class:"ml-3 text-danger" %>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
-
+    <% end %>
+  </div>
 </div>

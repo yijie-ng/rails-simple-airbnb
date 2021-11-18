@@ -1,13 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to "Complicated Airbnb", flats_path, class: "navbar-brand'" %>
+<div class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to "Complicated Airbnb", flats_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="ml-auto flex">
-      <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search" value=<%= @search %>>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-      <%= link_to "Create new", new_flat_path, class: "btn btn-outline-primary" %>
+      <div class="navbar-nav">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search" value=<%= @search %>>
+          <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
+        </form>
+        <%= link_to "Create new", new_flat_path, class: "btn btn-outline-primary my-2 my-sm-0" %>
+      </div>
     </div>
   </div>
-</nav>
+</div>
